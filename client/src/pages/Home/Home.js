@@ -1,13 +1,14 @@
 import React, {useState, useEffect} from 'react';
-import Header from '../../components/Header/Header';
-import {Link} from "react-router-dom";
-import CONSTANTS from '../../constants';
-import SlideBar from '../../components/SlideBar/SlideBar';
-import Footer from '../../components/Footer/Footer';
-import styles from './Home.module.sass';
-import carouselConstants from '../../carouselConstants';
-import {connect} from 'react-redux';
-import Spinner from '../../components/Spinner/Spinner';
+import Header                       from '../../components/Header/Header';
+import {Link}                       from "react-router-dom";
+import CONSTANTS                    from '../../constants';
+import SlideBar                     from '../../components/SlideBar/SlideBar';
+import Footer                       from '../../components/Footer/Footer';
+import styles                       from './Home.module.sass';
+import carouselConstants            from '../../carouselConstants';
+import {connect}                    from 'react-redux';
+import Spinner           from '../../components/Spinner/Spinner';
+import StartContestPanel from '../../components/StartContestPanel';
 
 
 const Home = (props) => {
@@ -46,7 +47,9 @@ const Home = (props) => {
                         <div className={styles.button}>
                             <Link className={styles.button__link} to="/dashboard">DASHBOARD</Link>
                         </div>
+                        <StartContestPanel/>
                     </div>
+
                     <div className={styles.greyContainer}>
                         <SlideBar images={carouselConstants.mainSliderImages}
                                   carouselType={carouselConstants.MAIN_SLIDER}/>
