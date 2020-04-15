@@ -33,6 +33,7 @@ class ContestPage extends React.Component {
 
     componentDidMount() {
         this.getData()
+        this.props.changeContestViewMode(true);
     }
 
 
@@ -109,13 +110,15 @@ class ContestPage extends React.Component {
         const {isShowOnFull, imagePath, error, isFetching, isBrief, contestData, offers, setOfferStatusError} = contestByIdStore;
         return (
             <div>
-                {/*<Chat/>*/}
                 {isShowOnFull && <LightBox
                     mainSrc={`${CONSTANTS.publicURL}${imagePath}`}
-                    onCloseRequest={() => changeShowImage({isShowOnFull: false, imagePath: null})}
+                    onCloseRequest={() => changeShowImage(
+                        {isShowOnFull: false, imagePath: null})}
                 />}
                 <Header/>
-                {error ? <div className={styles.tryContainer}><TryAgain getData={getData}/></div> :
+                {error ?
+                    <div className={styles.tryContainer}><TryAgain
+                        getData={getData}/></div> :
                     (
                         isFetching ?
                             <div className={styles.containerSpinner}>
@@ -125,23 +128,36 @@ class ContestPage extends React.Component {
                             (<div className={styles.mainInfoContainer}>
                                 <div className={styles.infoContainer}>
                                     <div className={styles.buttonsContainer}>
-                        <span onClick={() => changeContestViewMode(true)}
-                              className={classNames(styles.btn, {[styles.activeBtn]: isBrief})}>Brief</span>
-                                        <span onClick={() => changeContestViewMode(false)}
-                                              className={classNames(styles.btn, {[styles.activeBtn]: !isBrief})}>Offer</span>
+                        <span onClick={() => changeContestViewMode(true)} className={classNames(styles.btn, {[styles.activeBtn]: isBrief})}>Brief</span>
+                                        {
+                                            (offers.length > 0 || role ===
+                                                CONSTANTS.CREATOR) && <span
+                                                onClick={() => changeContestViewMode(
+                                                    false)}
+                                                className={classNames(
+                                                    styles.btn,
+                                                    {[styles.activeBtn]: !isBrief})}>Offer</span>
+                                        }
                                     </div>
                                     {
                                         isBrief ?
-                                            <Brief contestData={contestData} role={role} goChat={this.goChat}/>
+                                            <Brief contestData={contestData}
+                                                   role={role}
+                                                   goChat={this.goChat}/>
                                             :
-                                            <div className={styles.offersContainer}>
-                                                {(role === CONSTANTS.CREATOR && contestData.status === CONSTANTS.CONTEST_STATUS_ACTIVE) &&
-                                                <OfferForm contestType={contestData.contestType}
-                                                           contestId={contestData.id}
-                                                           customerId={contestData.User.id}/>}
-                                                {setOfferStatusError && <Error data={setOfferStatusError.data}
-                                                                               status={setOfferStatusError.status}
-                                                                               clearError={clearSetOfferStatusError}/>}
+                                            <div
+                                                className={styles.offersContainer}>
+                                                {(role === CONSTANTS.CREATOR &&
+                                                    contestData.status ===
+                                                    CONSTANTS.CONTEST_STATUS_ACTIVE) &&
+                                                <OfferForm
+                                                    contestType={contestData.contestType}
+                                                    contestId={contestData.id}
+                                                    customerId={contestData.User.id}/>}
+                                                {setOfferStatusError && <Error
+                                                    data={setOfferStatusError.data}
+                                                    status={setOfferStatusError.status}
+                                                    clearError={clearSetOfferStatusError}/>}
                                                 <div className={styles.offers}>
                                                     {this.setOffersList()}
                                                 </div>
@@ -153,7 +169,7 @@ class ContestPage extends React.Component {
                     )
                 }
             </div>
-        )
+        );
     }
 }
 
