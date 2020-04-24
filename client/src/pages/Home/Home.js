@@ -9,6 +9,7 @@ import carouselConstants            from '../../carouselConstants';
 import {connect}                    from 'react-redux';
 import Spinner           from '../../components/Spinner/Spinner';
 import StartContestPanel from '../../components/StartContestPanel';
+import ButtonHowItWorks from '../../components/ButtonHowItWorks';
 
 
 const Home = (props) => {
@@ -49,11 +50,11 @@ const Home = (props) => {
                         </div>
                         <StartContestPanel/>
                     </div>
-
                     <div className={styles.greyContainer}>
                         <SlideBar images={carouselConstants.mainSliderImages}
                                   carouselType={carouselConstants.MAIN_SLIDER}/>
                     </div>
+                    <ButtonHowItWorks/>
                     <div className={styles.container__description}>
                         <h2 className={styles.blueUnderline}>Why Squadhelp?</h2>
                         <div className={styles.cardContainer}>

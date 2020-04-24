@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
 import CONSTANTS from '../../constants';
 import {getUserAction, clearUserStore, headerRequest} from '../../actions/actionCreator';
+import { mdiMagnify } from '@mdi/js';
+import Icon from '@mdi/react'
 
 
 class Header extends React.Component{
@@ -52,6 +54,7 @@ class Header extends React.Component{
                     <Link to='/login' style={{textDecoration: 'none'}}><span className={styles.btn}>LOGIN</span></Link>
                     <Link to='/registration' style={{textDecoration: 'none'}}><span
                         className={styles.btn}>SIGN UP</span></Link>
+                    <Icon path={mdiMagnify} size={0.7}/>
                 </>
             )
         }
@@ -63,10 +66,6 @@ class Header extends React.Component{
         }
         return (
             <div className={styles.headerContainer}>
-                <div className={styles.fixedHeader}>
-                    <span className={styles.info}>Squadhelp recognized as one of the Most Innovative Companies by Inc Magazine.</span>
-                    <a href="http://www.google.com">Read Announcement</a>
-                </div>
                 <div className={styles.loginSignnUpHeaders}>
                     <div className={styles.numberContainer}>
                         <img src={`${CONSTANTS.STATIC_IMAGES_PATH}phone.png`} alt='phone'/>
@@ -151,6 +150,7 @@ class Header extends React.Component{
                         <div className={styles.startContestBtn} onClick={this.startContests}>START CONTEST</div>}
                     </div>
                 </div>
+
             </div>
         )
     }

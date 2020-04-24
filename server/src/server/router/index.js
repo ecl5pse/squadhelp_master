@@ -8,7 +8,7 @@ const validators = require('../middlewares/validators');
 const chatController = require('../controllers/chatController');
 const upload = require('../utils/fileUpload');
 const router = express.Router();
-
+const  offerController = require('../controllers/offerController')
 router.post(
   '/registration',
   validators.validateRegistrationData,
@@ -177,5 +177,8 @@ router.post(
   checkToken.checkToken,
   chatController.getCatalogs,
 );
-
+router.get(
+    '/offer',
+    offerController.getOffer
+)
 module.exports = router;

@@ -43,9 +43,9 @@ module.exports.updateOfferStatus = async (data, predicate, transaction) => {
 
 module.exports.createOffer = async (data) => {
   const result = await bd.Offers.create(data);
-  if ( !result) {
+  if (!result) {
     throw new ServerError('cannot create new Offer');
   } else {
-    return result.get({ plain: true });
+    return result.get({plain: true});
   }
 };

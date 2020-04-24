@@ -11,7 +11,6 @@ const DialogBox = (props) => {
     const isBlocked = blackList[participants.indexOf(userId)];
     return (
         <div className={styles.previewChatBox} onClick={() => goToExpandedDialog({
-            interlocutor,
             conversationData: {
                 participants: participants,
                 _id: _id,
@@ -19,7 +18,11 @@ const DialogBox = (props) => {
                 favoriteList: favoriteList
             }
         })}>
+
+
             <img src={interlocutor.avatar === 'anon.png' ? CONSTANTS.ANONYM_IMAGE_PATH : `${CONSTANTS.publicURL}${interlocutor.avatar}`} alt='user'/>
+
+
             <div className={styles.infoContainer}>
                 <div className={styles.interlocutorInfo}>
                     <span className={styles.interlocutorName}>{interlocutor.firstName}</span>

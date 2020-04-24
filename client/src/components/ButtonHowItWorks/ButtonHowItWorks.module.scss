@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 50px;
+  text-align: center;
+  border: 1px solid #377dff;
+  font-size: 16px;
+  border-radius: .3125rem;
+  font-family: 'Poppins', sans-serif;
+
+  .link{
+    text-decoration: none;
+    color: rgb(55, 125, 255);
+  }
+  &:hover, &:active, &:focus {
+    background: rgb(55, 125, 255);
+
+    .link {
+      text-decoration: none;
+      color: white;
+    }
+  }
+}

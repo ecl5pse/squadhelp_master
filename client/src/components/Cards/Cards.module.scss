@@ -1,0 +1,74 @@
+.container {
+  margin:  180px auto;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-left: 25px;
+  width: 320px;
+
+  .card_1 {
+    border: 1px solid #9ca8b7;
+    padding: 10px;
+  }
+
+  .heading {
+    position: static;
+  }
+
+  .body {
+    line-height: 1.5;
+    color: #9ca8b7;
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
+
+  .button {
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+    background: #2B62EC;
+    width: 120px;
+  }
+
+  .card_2{
+    margin-top: 10px;
+    border: 1px solid #9ca8b7;
+    padding: 10px;
+    .heading > .heading{
+      padding-top: 5px;
+    }
+    .button{
+      padding-top: 10px;
+    }
+  }
+
+  .card_3{
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #9ca8b7;
+  }
+}
+
+@media screen and (min-device-width: 1280px){
+  .container{
+    position: absolute;
+    top: 800px;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .card_1 {
+    width: 320px;
+  }
+
+  .card_2{
+    margin-left: 25px;
+    width: 320px;
+  }
+  .card_3{
+    margin-left: 25px;
+    width: 320px;
+  }
+}

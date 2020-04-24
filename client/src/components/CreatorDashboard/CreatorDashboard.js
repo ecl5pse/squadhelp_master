@@ -14,12 +14,15 @@ import queryString from 'query-string';
 import classNames from 'classnames';
 import isEqual from 'lodash/isEqual';
 import TryAgain from '../../components/TryAgain/TryAgain';
+import { mdiCloseCircleOutline } from '@mdi/js';
+import Icon from '@mdi/react'
 
 
 const types = ['', 'name,tagline,logo', 'name', 'tagline', 'logo', 'name,tagline', 'logo,tagline', 'name,logo'];
 
-
 class CreatorDashboard extends React.Component {
+
+
 
 
     renderSelectType = () => {
@@ -27,14 +30,23 @@ class CreatorDashboard extends React.Component {
         const {creatorFilter} = this.props;
         types.forEach((el, i) => !i || array.push(<option key={i - 1} value={el}>{el}</option>));
         return (
-            <select onChange={({target}) => this.changePredicate({
-                name: 'typeIndex',
-                value: types.indexOf(target.value)
-            })} value={types[creatorFilter.typeIndex]} className={styles.input}>
-                {array}
-            </select>
+            <>
+                <select onChange={({target}) => this.changePredicate({
+                    name: 'typeIndex',
+                    value: types.indexOf(target.value),
+                })} value={types[creatorFilter.typeIndex]}
+                        className={styles.input}>
+                    {array}
+                </select>
+                <>
+                            <span className={styles.badge}>{types[creatorFilter.typeIndex]}
+                                <Icon path={mdiCloseCircleOutline} size={0.6} className={styles.circle}/>
+                            </span>
+                </>
+            </>
         );
     };
+
 
     renderIndustryType = () => {
         const array = [];
