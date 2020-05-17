@@ -49,12 +49,13 @@
           border-radius: 100%
           margin-left: 15px
 
-  .footerTop
+  .footerTop , .footerCategories
     width: 100%
     background-color: #2B3030
     padding: 80px 0
     color: white
-    font-family: 'Raleway',sans-serif
+    font-family: 'Lato', sans-serif
+    font-size: 14px
 
     div
       margin: 0 auto
@@ -80,14 +81,14 @@
         flex-direction: column
         padding: 15px
 
-        h4
+        h4,.title
           font-size: 16px
           color: #fff
           display: block
           padding-bottom: 20px
           margin-bottom: 0
 
-        a
+        a ,.text
           padding-bottom: 7px
           font-size: 14px
           text-decoration: none
@@ -95,4 +96,115 @@
 
         a:hover
           color: rgb(249, 118, 75)
+
+        .title
+          border-bottom: 1px solid white
+          margin-bottom: 20px
+    .ver
+      display: flex
+      padding-left: 15px
+      justify-content: center
+      text-decoration: none
+      color: #767979
+      text-align: left
+
+  .containerBottom
+    display: flex
+    flex-direction: column
+    background: rgba(35, 40, 40, 1)
+    width: 100%
+    height: 220px
+    @media screen and (min-device-width: 1280px)
+      flex-direction: row-reverse
+      justify-content: space-evenly
+      align-items: center
+
+  .containerBottomIcon
+      padding-top: 20px
+      display: flex
+      justify-content: space-evenly
+      flex-direction: row
+      width: 100%
+      @media screen and (min-device-width: 1280px)
+        padding-top: 0
+        flex-direction: row-reverse
+        justify-content: space-evenly
+
+  .containerIcon
+      display: flex
+      flex-direction: row
+      width: 35px
+      height: 35px
+      border: 1px solid white
+      border-radius: 50%
+      justify-content: center
+      align-items: center
+      background: #3d4141
+
+  .icon
+    color: #3ea9f5
+    border-radius: 50%
+
+  .containerImage
+    margin-top: 15px
+    display: flex
+    justify-content: center
+    width: 100%
+    @media screen and (min-device-width: 1280px)
+      margin-top: 0
+      min-width: 300px
+      flex-direction: row-reverse
+      justify-content: space-evenly
+
+  img
+    width: 138px
+    height: 44px
+  p
+    font-family: 'Lato', sans-serif
+    font-size: 14px
+    text-align: center
+    margin-top: 15px
+    color:  #767979
+
+  .border
+    display: none
+
+    @media screen and (min-device-width: 1280px)
+      display: flex
+      background: white
+      width: 2px
+      height: 50px
+      position: absolute
+
+@media screen and (min-device-width: 768px)
+    .footerTop
+      display: none
+
+@media screen and (min-device-width: 1280px)
+    .footerTop
+      display: flex
+
+    .footerCategories
+      flex-direction: row
+      padding: 0
+
+    .header
+      text-align: left
+      width: 1000px
+      height: 100px
+      position: static
+      margin-left: 370px
+      border-bottom: 2px solid white
+
+    .body
+      display: flex
+      flex-direction: column
+      min-width: 100px
+      color: white
+      text-decoration: none
+      justify-content: flex-start
+      align-items: flex-start
+
+    .ver
+      margin-left: -700px
 

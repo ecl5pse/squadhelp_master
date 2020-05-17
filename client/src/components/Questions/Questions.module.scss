@@ -1,0 +1,95 @@
+.container{
+  font-family: 'Raleway', sans-serif;
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 320px;
+  background: rgba(69, 90, 137, 1);
+  color: white;
+
+  .title{
+    font-weight: 700;
+    width: 200px;
+    padding: 10px;
+    text-align: center;
+    font-size: 25px;
+  }
+  .text{
+    font-size: 20px;
+    margin-top: 10px;
+    padding: 10px;
+    width: 220px;
+    text-align: center;
+    height: 140px;
+  }
+  .button{
+    margin-top: 45px;
+    font-weight: 700;
+    font-size: 20px;
+    display: flex;
+    border:2px solid white;
+    justify-content: center;
+    padding: 25px;
+    border-radius: 5px;
+  }
+  a{
+    text-decoration: none;
+    color: rgba(236, 132, 97, 1);
+  }
+}
+
+.containerIconEmail{
+  display: none;
+  .iconEmail{
+    display: none;
+  }
+}
+
+@media screen  and (min-device-width: 768px){
+  .container{
+    max-width: 768px;
+  }
+  .text{
+   min-width: 690px;
+    max-height: 60px;
+  }
+}
+@media screen and (min-device-width: 1280px){
+  .container{
+    align-items: flex-start;
+    margin-top: 50px;
+    flex-direction: row;
+    min-width: 100%;
+  }
+  .containerIconEmail{
+    margin-top: 15px;
+    display: flex;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: white;
+    justify-content: center;
+    align-items: center;
+
+    .iconEmail{
+      display: flex;
+      color: rgba(69, 90, 137, 1);
+    }
+  }
+  .containerText{
+    padding: 10px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+  }
+  .title{
+    text-align: left;
+    margin-left: -32px;
+    margin-bottom: -10px;
+  }
+  .text{
+    min-width: 676px;
+  }
+}

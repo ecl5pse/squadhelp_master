@@ -8,10 +8,7 @@ const StartContestPanel = (props) => {
 
   return (
       <div className={style.container}>
-        <p>Ready to get started? Launch a contest and start receiving
-          submissions instantly.</p>
         <Link to={'dashboard'} className={style.button}>
-          <Icon path={mdiLightbulbOutline} size={0.9}/>
           <span> Start of Contest</span>
         </Link>
       </div>

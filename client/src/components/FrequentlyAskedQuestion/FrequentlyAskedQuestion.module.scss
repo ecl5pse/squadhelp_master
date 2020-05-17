@@ -1,0 +1,98 @@
+@import "../Cards/Cards.module";
+.cycle{
+  margin-top: 10px;
+  margin-left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: 2px solid #3ea9f5;
+  font-size: 36px;
+  color: #3ea9f5;
+}
+.container {
+  width: 320px;
+  margin-left: 15px;
+
+  .containerText {
+    padding: 10px;
+  }
+
+  .heading {
+    margin-top: 0;
+    font-size: 18px;
+    margin-left: -20px;
+    padding-bottom: 0;
+    margin-bottom: 15px;
+
+  }
+  .body{
+    text-align: left;
+    padding: 0;
+    width: 270px;
+    font-size: 14px;
+    color: black;
+  }
+
+}
+.asked{
+  text-align: left;
+  position: static;
+  font-size: 22px;
+  width: 200px;
+  padding: 20px;
+}
+
+@media screen and (min-device-width: 768px){
+  .cycle{
+    margin-top: 0;
+  }
+  .containerAsked{
+    margin-top: 25px;
+    display: flex;
+    flex-direction: row;
+    width: 720px;
+  }
+  .asked{
+    width: 320px;
+  }
+
+  .container{
+    width: 720px;
+  }
+  .body {
+    min-width: 700px;
+    font-size: 16px;
+    margin-left: -10px;
+  }
+  .heading{
+    padding: 10px;
+    text-align: left;
+  }
+
+  .containerText{
+    margin-left: 15px;
+  }
+}
+
+@media screen and (min-width: 1280px){
+  .containerAsked{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-weight: 700;
+    margin-left: 350px;
+  }
+  .container{
+    flex-direction: column;
+    max-width: 1280px;
+    justify-content: flex-start;
+    margin-left: 350px;
+
+  }
+  .body{
+    min-width: 1120px;
+  }
+}

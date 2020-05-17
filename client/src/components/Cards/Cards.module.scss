@@ -1,19 +1,20 @@
 .container {
-  margin:  180px auto;
   text-align: center;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding-left: 25px;
   width: 320px;
+  font-family: 'Raleway', sans-serif;
 
-  .card_1 {
-    border: 1px solid #9ca8b7;
-    padding: 10px;
+  .containerCards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+    width: 320px;
   }
-
-  .heading {
-    position: static;
+  .title {
+    padding-top: 25px;
   }
 
   .body {
@@ -23,52 +24,101 @@
     padding-bottom: 20px;
   }
 
-  .button {
-    border-radius: 5px;
-    padding: 10px;
-    color: white;
-    background: #2B62EC;
-    width: 120px;
+  .button , .buttonNtn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    font-weight: 700;
+    font-size: 30px;
+    color: black;
+    background: #28d2d0;
+    border: 1px;
+    box-sizing: border-box;
   }
 
-  .card_2{
-    margin-top: 10px;
-    border: 1px solid #9ca8b7;
-    padding: 10px;
-    .heading > .heading{
-      padding-top: 5px;
-    }
-    .button{
-      padding-top: 10px;
-    }
-  }
-
-  .card_3{
-    margin-top: 20px;
-    padding: 10px;
-    border: 1px solid #9ca8b7;
+  .buttonNtn{
+    background: silver;
   }
 }
+.heading, .title {
+  position: static;
+}
 
-@media screen and (min-device-width: 1280px){
-  .container{
-    position: absolute;
-    top: 800px;
+.heading{
+  margin-top: 300px;
+  font-weight: 700;
+  text-align: center;
+  padding-left: 10px;
+  width: 300px;
+  font-size: 35px;
+  padding-bottom: 50px;
+}
+@media screen and (min-device-width: 768px) {
+
+  .heading {
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    width: 720px;
+  }
+  .container {
     width: 100%;
     flex-direction: row;
     justify-content: center;
+    align-content: center;
+
+    .containerCards {
+      max-width: 250px;
+      padding: 20px;
+    }
+
+    .title {
+      margin-top: 10px;
+      padding: 5px;
+      font-size: 16px;
+      width: 200px;
+      font-weight: 700;
+    }
+    .body{
+      margin-top: 10px;
+      width: 275px;
+      color: black;
+
+    }
+  }
+}
+
+@media screen  and  (min-device-width: 1280px){
+  .container{
+    margin: 0 auto;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 1280px;
+    flex-wrap: nowrap;
+  }
+  .heading{
+    font-size: 36px;
+    margin: 0 auto;
+    height: 100px;
+    min-width: 350px;
+    padding: 0;
+
+  }
+  .containerCards{
+    padding: 0;
+    max-width: 150px;
+    align-items: center;
+  }
+  .body{
+    max-width: 165px;
   }
 
-  .card_1 {
-    width: 320px;
+  .title{
+    font-size: 16px;
+    line-height: 17.5px;
   }
 
-  .card_2{
-    margin-left: 25px;
-    width: 320px;
-  }
-  .card_3{
-    margin-left: 25px;
-    width: 320px;
-  }
 }

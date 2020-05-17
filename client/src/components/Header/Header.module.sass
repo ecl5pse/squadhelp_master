@@ -1,27 +1,46 @@
 .headerContainer
+  box-sizing: border-box
   display: flex
   flex-direction: column
   justify-content: flex-start
   width: 100%
   font-family: 'Poppins', sans-serif
   padding-bottom: 10px
-  border-bottom: 5px solid rgba(242, 242, 243, 1)
+  position: fixed
+  top: 0
+  background: white
 
   .navContainer
     width: 100%
-    margin: 0 auto
+    margin: 5px auto
     display: flex
-    justify-content: space-around
+    justify-content: flex-start
     align-items: center
-    @media(max-width: 920px)
-      justify-content: center
-    @media(max-width: 700px)
-      justify-content: flex-start
+
+    @media(min-width: 1280px)
+      border-bottom: 5px solid rgba(235, 235, 235, 1)
+
+    .mobileLogo
+      align-self: flex-end
+      display: flex
+      position: absolute
+      top: 10px
+      padding: 10px
+      width: 100px
+      height: 32px
 
     .logo
+      margin-bottom: 5px
+      padding-right: 15px
       align-self: flex-end
-      @media(max-width: 920px)
-        display: none
+      display: flex
+      width: 95px
+      height: 30px
+      @media screen and (min-width: 1280px)
+        width: 150px
+        height: 53px
+        padding-left: 500px
+        padding-right: 200px
 
     .startContestBtn
       text-align: center
@@ -38,15 +57,22 @@
         color: white
         background-color: #28d2d0
 
-    .leftNav
+
+    .mobileNav
       display: flex
-      @media(max-width: 750px)
+      @media screen and (max-width: 320px)
+          .mobileNav
+            display: none
+
+    .desktopNav
+      display: none
+      @media(min-width: 750px)
+        display: flex
         align-items: center
         flex-direction: column
 
       .nav
         display: flex
-
         ul
           margin: 0
           list-style: none
@@ -121,7 +147,7 @@
               font-weight: 300
               padding: 15px 0
 
-  .loginSignnUpHeaders
+  .loginSignUpHeaders
     display: flex
     flex-direction: row
     align-items: center
@@ -141,7 +167,7 @@
         margin-left: 20px
       @media(max-width: 320px)
         margin-left: 0
-
+        display: none
       .emailIcon
         padding: 0 15px
         border-right: 1px solid #ebebeb
@@ -168,6 +194,9 @@
 
           li
             text-align: left
+            display: flex
+            flex-direction: row
+
 
             &:hover
               background: #f9fafb
@@ -207,9 +236,11 @@
       height: 40px
       @media(max-width: 600px)
         margin-left: 10px
+
       @media(max-width: 360px)
         padding: 0 5px
         margin-left: 0
+        display: none
 
       span
         color: #337ab7
@@ -242,4 +273,55 @@
       letter-spacing: 0.3px
       color: lightyellow
       text-decoration: underline
+
+
+.numberContainerMob
+   padding-top: 50px
+
+.containerButton
+  display: flex
+  width: 35px
+  flex-direction: column
+  align-items: flex-start
+  position: absolute
+  top: 25px
+  left: 250px
+  padding-right: 17px
+
+.menuButton
+  width: 35px
+  height: 2px
+  background-color: black
+  margin: 2px 0
+
+.openLeftNav
+  display: none
+
+
+@media  screen and  (min-device-width: 768px)
+  .containerButton
+    display: none
+  .mobileLogo
+    visibility: hidden
+  .navContainer
+    margin-top: 10px
+  .mobileNav
+    visibility: hidden
+  .headerContainer
+    max-width: 768px
+  ul
+    max-width: 768px
+
+
+
+@media screen and (min-device-width: 320px)
+  .logo
+    display: none
+
+@media  screen and (min-device-width: 1280px)
+  .headerContainer
+    position: static
+    min-width: 100%
+  ul
+    min-width: 1280px
 

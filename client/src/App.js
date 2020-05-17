@@ -19,7 +19,7 @@ import CONSTANTS                from './constants';
 import browserHistory           from './browserHistory';
 import ChatContainer            from './components/Chat/ChatComponents/ChatContainer/ChatContainer';
 import TransactionPage          from './pages/TransactionPage';
-import HowItWorks               from './pages/HowItWorks';
+import HowItWorks               from './pages/HowItWorksPage';
 
 
 

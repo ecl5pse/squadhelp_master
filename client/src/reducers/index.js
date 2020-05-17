@@ -13,7 +13,6 @@ import chatReducer from './chatReducer';
 import userProfileReducer from './userProfileReducer';
 
 
-
 const appReducer=combineReducers({
    form: formReducer,
    userStore: getUserReducer,
@@ -26,7 +25,7 @@ const appReducer=combineReducers({
    bundleStore: bundleReducer,
    updateContestStore: updateContestReducer,
    chatStore: chatReducer,
-   userProfile: userProfileReducer
+   userProfile: userProfileReducer,
 });
 
 export default appReducer;
