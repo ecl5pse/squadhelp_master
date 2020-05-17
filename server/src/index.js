@@ -5,6 +5,7 @@ const router = require('./server/router');
 const cors = require('cors');
 const controller = require('./socketInit');
 const handlerError = require('./server/handlerError/handler');
+const fs = require('fs')
 const PORT = process.env.PORT || 9632;
 const app = express();
 
@@ -22,3 +23,6 @@ app.listen(3000, function () {
 });
 controller.createConnection(server);
 
+const error =
+
+fs.createWriteStream('log.json', JSON.stringify(error));
